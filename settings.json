@@ -1,0 +1,11 @@
+{
+    "url": "https://loteriasdominicanas.com/",
+    "url_dated": "https://loteriasdominicanas.com/?date={date}",
+    "loterias": [
+        "Lotería Nacional",
+        "Quiniela Leidsa",
+        "Gana Más",
+        "New York Tarde",
+        "New York Noche"
+    ]
+}
