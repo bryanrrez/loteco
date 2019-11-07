@@ -16,7 +16,7 @@ class Tests(unittest.TestCase):
     def setUpClass(cls):
         cls.helpers = Helpers()
         cls.chrome_options = Options()
-        cls.chrome_options.headless = False
+        cls.chrome_options.headless = True
         cls.driver = webdriver.Chrome(options=cls.chrome_options)
 
         cls.config = cls.helpers.read_json_file('./settings.json')
@@ -29,8 +29,8 @@ class Tests(unittest.TestCase):
     def test_01(self):
         resultados = self.helpers.read_json_file('./resultados.json')
 
-        fecha_inicio = '06-11-2019'
-        fecha_fin = '07-11-2019'
+        fecha_inicio = self.config['fecha_inicio']
+        fecha_fin = self.config['fecha_fin']
 
         while fecha_inicio != fecha_fin:
             self.driver.get(self.config['url_dated'].format(date=fecha_inicio))
