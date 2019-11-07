@@ -37,11 +37,16 @@ class HomePage:
 
         for i in range(1, 4):
             try:
-                premio = self.wait.until(EC.visibility_of_element_located((self.loteria_fecha_span[0],
-                                                                           self.loteria_fecha_span[1].format(loteria=loteria,
-                                                                                                             fecha=fecha,
-                                                                                                             no_premio=str(i)))))
-            except EXEC.TimeoutException:
+                # premio = self.wait.until(EC.visibility_of_element_located((self.loteria_fecha_span[0],
+                #                                                            self.loteria_fecha_span[1].format(loteria=loteria,
+                #                                                                                              fecha=fecha,
+                #                                                                                              no_premio=str(i)))))
+
+                premio = self.driver.find_element(by=self.loteria_fecha_span[0],
+                                                  value=self.loteria_fecha_span[1].format(loteria=loteria,
+                                                                                          fecha=fecha,
+                                                                                          no_premio=str(i)))
+            except EXEC.NoSuchElementException:
                 if i == 1:
                     sorteo['primer_lugar'] = 'N/A'
                 elif i == 2:
