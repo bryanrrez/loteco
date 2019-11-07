@@ -3,9 +3,11 @@
     "url_dated": "https://loteriasdominicanas.com/?date={date}",
     "loterias": [
         "Lotería Nacional",
-        "Quiniela Leidsa",
         "Gana Más",
+        "Quiniela Leidsa",
         "New York Tarde",
         "New York Noche"
-    ]
+    ],
+    "fecha_inicio": "06-11-2019",
+    "fecha_fin": "07-11-2019"
 }
