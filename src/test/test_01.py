@@ -1,5 +1,6 @@
 #! /usr/local/bin/python3
-import unittest, time, sys, os
+
+import unittest, sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
 from datetime import datetime, timedelta
@@ -7,8 +8,9 @@ from datetime import datetime, timedelta
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-from project.helpers import Helpers
-from project.pages.home_page import HomePage
+from src.helpers import Helpers
+from src.page.home_page import HomePage
+
 
 class Tests(unittest.TestCase):
 
@@ -16,7 +18,7 @@ class Tests(unittest.TestCase):
     def setUpClass(cls):
         cls.helpers = Helpers()
         cls.chrome_options = Options()
-        cls.chrome_options.headless = True
+        cls.chrome_options.headless = False
         cls.driver = webdriver.Chrome(options=cls.chrome_options)
 
         cls.config = cls.helpers.read_json_file('./settings.json')
