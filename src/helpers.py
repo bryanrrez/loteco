@@ -2,10 +2,9 @@
 import json
 from datetime import datetime, timedelta
 
+
 class Helpers:
-    """
-    Clase con métodos de soporte para el proyecto.
-    """
+    """Clase con métodos de soporte para el proyecto."""
 
     def read_json_file(self, path):
         """
