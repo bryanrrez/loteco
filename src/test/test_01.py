@@ -34,7 +34,7 @@ class Tests(unittest.TestCase):
         fecha_inicio = self.config['fecha_inicio']
         fecha_fin = self.config['fecha_fin']
 
-        while fecha_inicio != fecha_fin:
+        while fecha_inicio != fecha_fin or fecha_fin == fecha_fin:
             self.driver.get(self.config['url_dated'].format(date=fecha_inicio))
 
             for loteria in self.config['loterias']:
